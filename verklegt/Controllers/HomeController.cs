@@ -15,7 +15,7 @@ namespace verklegt.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application hdhd.";
+            ViewBag.Message = "Jon David Davidsson";
 
             return View();
         }
