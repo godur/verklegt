@@ -4,6 +4,7 @@
 
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    <input type="text" name="Title" />
     <input type="file" name="file" />
     <input type="submit" value="OK" />
 }
