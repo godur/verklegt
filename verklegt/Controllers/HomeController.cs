@@ -32,6 +32,7 @@ namespace verklegt.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Jhehehehen";
+			string x = "10";
 
             return View();
         }
