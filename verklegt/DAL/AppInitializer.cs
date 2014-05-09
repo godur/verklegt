@@ -5,7 +5,7 @@ using System.Web;
 
 namespace verklegt.DAL
 {
-	public class AppInitializer
+	public class AppInitializer : System.Data.Entity.DropCreateDatabaseAlways<AppContext>
 	{
 	}
 }

@@ -8,6 +8,6 @@ namespace verklegt.Models
 	public class Category
 	{
 		public int ID { get; set; }
-		public string Category { get; set; }
+		public string CategoryName { get; set; }
 	}
 }

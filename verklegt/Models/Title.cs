@@ -8,6 +8,6 @@ namespace verklegt.Models
 	public class Title
 	{
 		public int ID { get; set; }
-		public string Title { get; set; }
+		public string TitleName { get; set; }
 	}
 }

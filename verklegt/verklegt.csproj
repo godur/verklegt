@@ -172,7 +172,7 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\Points.cs" />
+    <Compile Include="Models\Point.cs" />
     <Compile Include="Models\SubPart.cs" />
     <Compile Include="Models\SubPartText.cs" />
     <Compile Include="Models\Subtitle.cs" />
