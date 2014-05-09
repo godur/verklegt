@@ -31,7 +31,7 @@ namespace verklegt.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Jon David Davidsson";
+            ViewBag.Message = "Jhehehehen";
 
             return View();
         }
