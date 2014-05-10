@@ -12,114 +12,122 @@ using verklegt.Repositories;
 
 namespace verklegt.Controllers
 {
-    public class SubPartController : Controller
+    public class SubtitleController : Controller
     {
 		// Búum til tilvik af repository-inum okkar til að vinna með í gegnum föllin.
-		SubPartsRepository repo = new SubPartsRepository();
+		SubtitleRepository repo = new SubtitleRepository();
 
-        // GET: /SubPart/
+        // GET: /Subtitle/ skilar nýjustu 10 subtitles
         public ActionResult Index()
         {
-			var result = repo.GetAllSubParts();
-			
-			return View(result);
+			//var subtitles = repo.GetFirst10Subtitles();
+			var subtitles = repo.GetAllSubtitles();
+			return View(subtitles);
         }
 
-        // GET: /SubPart/Details/5
+        // GET: /Subtitle/Details/5
         public ActionResult Details(int? id)
         {
-			if (id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-			var subPartById = repo.GetSubPartById(id);
-            
-			if (subPartById == null)
+			var subtitleById = repo.GetSubtitleById(id);
+			
+            if (subtitleById == null)
             {
                 return HttpNotFound();
             }
-            
-			return View(subPartById);
+            return View(subtitleById);
         }
 
-        // GET: /SubPart/Create
+        // GET: /Subtitle/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: /SubPart/Create
+        // POST: /Subtitle/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,StartTime,EndTime,MediaURLExtension")] SubPart subpart)
+        public ActionResult Create([Bind(Include="ID,Title,Category,Language,PublishDate,MediaURL,SubtitleFileURL,Status,Votes")] Subtitle subtitle)
         {
             if (ModelState.IsValid)
             {
-				repo.AddSubPart(subpart);
-				repo.SaveSubPart();
-				return RedirectToAction("Index");
+				repo.AddSubtitle(subtitle);
+				repo.SaveSubtitle();
+                return RedirectToAction("Index");
             }
 
-            return View(subpart);
+            return View(subtitle);
         }
 
-        // GET: /SubPart/Edit/5
+        // GET: /Subtitle/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			var subPartByID = repo.GetSubPartById(id);
-            if (subPartByID == null)
+			var subtitleByID = repo.GetSubtitleById(id);
+            if (subtitleByID == null)
             {
                 return HttpNotFound();
             }
-            return View(subPartByID);
+            return View(subtitleByID);
         }
 
-        // POST: /SubPart/Edit/5
+        // POST: /Subtitle/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,StartTime,EndTime,MediaURLExtension")] SubPart subpart)
+        public ActionResult Edit([Bind(Include="ID,Title,Category,Language,PublishDate,MediaURL,SubtitleFileURL,Status,Votes")] Subtitle subtitle)
         {
             if (ModelState.IsValid)
             {
-				repo.UpdateSubPart(subpart);
-				return RedirectToAction("Index");
+				repo.UpdateSubtitle(subtitle);
+                return RedirectToAction("Index");
             }
-            return View(subpart);
+            return View(subtitle);
         }
 
-        // GET: /SubPart/Delete/5
+        // GET: /Subtitle/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			var subPartByID = repo.GetSubPartById(id);
-            if (subPartByID == null)
+			var subtitleByID = repo.GetSubtitleById(id);
+            if (subtitleByID == null)
             {
                 return HttpNotFound();
             }
-            return View(subPartByID);
+            return View(subtitleByID);
         }
 
-        // POST: /SubPart/Delete/5
+        // POST: /Subtitle/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var subPartByID = repo.GetSubPartById(id);
-			repo.RemoveSubPart(subPartByID);
-			repo.SaveSubPart();
+			var subtitleByID = repo.GetSubtitleById(id);
+			repo.RemoveSubtitle(subtitleByID);
+			repo.SaveSubtitle();
             return RedirectToAction("Index");
         }
+
+		//protected override void Dispose(bool disposing)
+		//{
+		//	if (disposing)
+		//	{
+		//		db.Dispose();
+		//	}
+		//	base.Dispose(disposing);
+		//}
     }
 }

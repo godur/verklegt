@@ -22,6 +22,12 @@ namespace verklegt.Repositories
 			return first10Subtitles;
 		}
 
+		// Fall sem sækir alla skjátexta í gagnagrunninn og skilar þeim tilbaka.
+		public IEnumerable<Subtitle> GetAllSubtitles()
+		{
+			return db.Subtitles;
+		}
+
 		// Fall sem sækir alla skjátexta fyrir gefinn flokk
 		public IEnumerable<Subtitle> GetSubtitleByCategories(int? id)
 		{

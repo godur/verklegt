@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SubPartController.cs" />
+    <Compile Include="Controllers\SubtitleController.cs" />
     <Compile Include="DAL\AppContext.cs" />
     <Compile Include="DAL\AppInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,6 +236,11 @@
     <Content Include="Views\SubPart\Details.cshtml" />
     <Content Include="Views\SubPart\Edit.cshtml" />
     <Content Include="Views\SubPart\Index.cshtml" />
+    <Content Include="Views\Subtitle\Create.cshtml" />
+    <Content Include="Views\Subtitle\Delete.cshtml" />
+    <Content Include="Views\Subtitle\Details.cshtml" />
+    <Content Include="Views\Subtitle\Edit.cshtml" />
+    <Content Include="Views\Subtitle\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
