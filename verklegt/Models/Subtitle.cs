@@ -14,7 +14,8 @@ namespace verklegt.Models
 		public DateTime PublishDate { get; set; }
 		public string MediaURL { get; set; }
 		public string SubtitleFileURL { get; set; }
-		public string Status { get; set; }	
+		public string Status { get; set; }
+		public int Votes { get; set; }
 		
 		List<SubPart> SubParts;
 	}
