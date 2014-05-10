@@ -7,5 +7,13 @@ namespace verklegt.Repositories
 {
 	public class SubtitleRepository
 	{
+		// GetSubtitles
+		// GetSubtitleByCategories
+		// FilterSubtitlesByCategories
+		// CompareSubtitleTitle
+		// AddSubtitleCount
+		// GetSubtitleFile
+		// MergeSubtitleFile
+		// TrimSubtitleFile
 	}
 }
