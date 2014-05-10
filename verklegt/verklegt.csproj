@@ -162,11 +162,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SubPartController.cs" />
     <Compile Include="DAL\AppContext.cs" />
     <Compile Include="DAL\AppInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -174,6 +176,7 @@
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="Models\SubPart.cs" />
+    <Compile Include="Models\SubPartsRepository.cs" />
     <Compile Include="Models\SubPartText.cs" />
     <Compile Include="Models\Subtitle.cs" />
     <Compile Include="Models\Title.cs" />
@@ -226,6 +229,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\SubPart\Create.cshtml" />
+    <Content Include="Views\SubPart\Delete.cshtml" />
+    <Content Include="Views\SubPart\Details.cshtml" />
+    <Content Include="Views\SubPart\Edit.cshtml" />
+    <Content Include="Views\SubPart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
