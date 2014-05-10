@@ -176,7 +176,7 @@
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="Models\SubPart.cs" />
-    <Compile Include="Models\SubPartsRepository.cs" />
+    <Compile Include="Repositories\SubPartsRepository.cs" />
     <Compile Include="Models\SubPartText.cs" />
     <Compile Include="Models\Subtitle.cs" />
     <Compile Include="Models\Title.cs" />
